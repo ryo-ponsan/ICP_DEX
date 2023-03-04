@@ -2,25 +2,35 @@
   "name": "icp_basic_dex_frontend",
   "version": "0.1.0",
   "description": "Internet Computer starter application",
-  "keywords": ["Internet Computer", "Motoko", "JavaScript", "Canister"],
+  "keywords": [
+    "Internet Computer",
+    "Motoko",
+    "JavaScript",
+    "Canister"
+  ],
   "scripts": {
     "build": "webpack",
     "prebuild": "npm run generate",
     "start": "webpack serve --mode development --env development",
     "prestart": "npm run generate",
-    "generate": "dfx generate icp_basic_dex_backend"
+    "generate": "dfx generate GoldDIP20 && dfx generate SilverDIP20 && dfx generate faucet && dfx generate internet_identity_div && dfx generate icp_basic_dex_backend"
   },
   "devDependencies": {
-    "@dfinity/agent": "0.15.3",
-    "@dfinity/candid": "0.15.3",
-    "@dfinity/principal": "0.15.3",
+    "@babel/core": "^7.21.0",
+    "@babel/preset-react": "^7.18.6",
+    "@dfinity/agent": "^0.15.4",
+    "@dfinity/candid": "^0.15.4",
+    "@dfinity/principal": "^0.15.4",
     "assert": "2.0.0",
+    "babel-loader": "^9.1.2",
     "buffer": "6.0.3",
     "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.7.3",
     "events": "3.3.0",
     "html-webpack-plugin": "5.5.0",
     "process": "0.11.10",
     "stream-browserify": "3.0.0",
+    "style-loader": "^3.3.1",
     "terser-webpack-plugin": "^5.3.3",
     "util": "0.12.4",
     "webpack": "^5.73.0",
@@ -35,5 +45,10 @@
     "last 2 firefox version",
     "last 2 safari version",
     "last 2 edge version"
-  ]
+  ],
+  "dependencies": {
+    "@dfinity/auth-client": "^0.15.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
 }
